@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "YouTube Quick-Search",
+  "description": "Quick Search Chrome Extension for YouTube",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "YQ.html"
+  },
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "MacCtrl+Shift+Y"
+      },
+      "description": "Opens YQ.html"
+    }
+  },
+  "permissions": ["activeTab"]
+}
