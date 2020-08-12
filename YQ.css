@@ -14,11 +14,16 @@ form * {
   margin: 5px auto;
 }
 
-label:first-child {
+label[for="searchBar"] {
   font-size: medium;
+  font-weight: bold;
 }
 
-form input:last-child {
+label[for="onCurrentTab"] {
+  font-weight: bold;
+}
+
+form input[type="submit"] {
   background-color: #2c3e50;
   border: 0;
   border-radius: 2px;
@@ -26,7 +31,7 @@ form input:last-child {
   color: white;
 }
 
-form input:last-child:hover {
+form input[type="submit"]:hover {
   background-color: #34495e;
   cursor: pointer;
 }
