@@ -3,7 +3,7 @@
 
   "name": "YouTube Quick-Search",
   "description": "Quick Search Chrome Extension for YouTube",
-  "version": "1.2",
+  "version": "1.3",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -19,5 +19,5 @@
       "description": "Opens YQ.html"
     }
   },
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab", "tabs"]
 }

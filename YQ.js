@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   queryInput.focus();
 
+  function openInCurTab(request) {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const curTab = tabs[0];
+      chrome.tabs.update(curTab.id, { url: request });
+    });
+  }
+
   const YOUTUBE_QUERY_PREFIX = "https://youtube.com/results?search_query=";
 
   searchForm.addEventListener("submit", (event) => {
@@ -28,10 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const SEARCH_QUERY = TRIMMED_INPUT.replace(/ /g, "+");
 
     const REQUEST = YOUTUBE_QUERY_PREFIX + SEARCH_QUERY;
+
     if (onCurrentTab.checked) {
-      window.open(REQUEST, "_self");
+      openInCurTab(REQUEST);
     } else {
-      window.open(REQUEST);
+      // window.open(REQUEST);
+      chrome.tabs.create({ url: REQUEST });
     }
 
     event.preventDefault();
